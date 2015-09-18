@@ -218,19 +218,21 @@
 ![ENIAC](images/03-numbers/eniac.png)
 	    </script></section>
 
-	    <section data-markdown><script type="text/template">
-## Directions for getting **6**
-1. Choose any regular accumulator (ie. Accumulator #9). 
-2. Direct the Initiating Pulse to terminal 5i. 
-3. The initiating pulse is produced by the initiating unit's Io terminal (usually plugged into Program Line 1-1) each time the Eniac is started. Simply connect a program cable from Program Line 1-1 to terminal 5i on this Accumulator. 
-4. Set the Repeat Switch for Program Control 5 to 6. 
-5. Set the Operation Switch for Program Control 5 to ADD. 
-6. Set the Clear-Correct switch to C. 
-7. Turn on and clear the Eniac. 
-8. If there are random neons illuminated in the accumulators, press the "Initial Clear" button of the Initiating device
-9. Press the "Initiating Pulse Switch" that is located on the Initiating device. 
-10. **Stand back.**
-	    </script></section>
+	    <section>
+<h2>Directions for getting 6<h2>
+<ol style="font-size:55%;line-height:120%;font-variant:normal">
+<li>Choose any regular accumulator (ie. Accumulator #9).</li>
+<li>Direct the Initiating Pulse to terminal 5i.</li>
+<li>The initiating pulse is produced by the initiating unit's Io terminal (usually plugged into Program Line 1-1) each time the Eniac is started. Simply connect a program cable from Program Line 1-1 to terminal 5i on this Accumulator.</li>
+<li>Set the Repeat Switch for Program Control 5 to 6.</li>
+<li>Set the Operation Switch for Program Control 5 to ADD.</li>
+<li>Set the Clear-Correct switch to C.</li> 
+<li>Turn on and clear the Eniac. </li>
+<li>If there are random neons illuminated in the accumulators, press the "Initial Clear" button of the Initiating device</li>
+<li>Press the "Initiating Pulse Switch" that is located on the Initiating device.</li>
+<li><b>Stand back.</b></li>
+</ol>
+	    </section>
 
 	    <section data-markdown><script type="text/template">
 ## ENIAC Number Representation
@@ -263,7 +265,6 @@
 <li>1 + 0 = 1</li>
 <li>1 + 1 = 0 carry 1</li>
 </ul>
-<p>&nbsp;</p>
 <p>Maximum value is \( 2^n-1 \) -- but what should \( n \) be?</p>
 	    </section>
 
@@ -499,6 +500,20 @@ void Image::WriteInt (int value, FILE * fp) {
 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | = | -128 |
 	  </script></section>
 
+	  <section data-markdown><script type="text/template">
+## Integer overflow
+- Given a signed 8-bit integer: 127 = 0111 1111
+  - The maximum value for that data type
+- If you add 1 to that, you get 1000 000
+  - Which is -128
+- This is called *overflow* (or *integer overflow*)
+- Other common overflows:
+  - 16-bits: 32,767 + 1 = -32,768
+  - 32-bits: 2,147,483,647 + 1 = -2,147,483,648
+- This has real-word applications: [*Gangnam Style* overflows INT_MAX, forces YouTube to go 64-bit](http://arstechnica.com/business/2014/12/gangnam-style-overflows-int_max-forces-youtube-to-go-64-bit/) (Dec 3, 2014)
+  - If you care, it's now at 2.4 billion views (as of Sep 2015)
+	  </script></section>
+
 	  <section>
 <h2>A bit of an aside...</h2>
 <p>This is an <i>actual</i> comment left by a graduating SEAS computer science major:</p>
@@ -507,7 +522,7 @@ void Image::WriteInt (int value, FILE * fp) {
   <p>I can't count the number of times I was taught how to count in binary</p>
 </blockquote>
 <p>&nbsp;</p>
-<p class="fragment">So this material may appear again...</p>
+<p class="fragment">So this material may appear again in the CS curriculum.  Hopefully everybody will (eventually) learn it...</p>
 	  </section>
 
 	</section>
